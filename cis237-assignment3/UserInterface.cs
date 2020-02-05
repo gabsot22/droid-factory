@@ -24,7 +24,7 @@ namespace cis237_assignment3
             String input = Console.ReadLine();
 
             //While the input is not valid re-get the input
-            while (input != "1" && input != "2")
+            while (input != "1" && input != "2" && input != "3")
             {
                 //Print Error message
                 this.PrintErrorMessage();
@@ -60,6 +60,24 @@ namespace cis237_assignment3
             Console.WriteLine("That is not a valid entry");
             Console.WriteLine("Please make a valid choice");
             Console.WriteLine();
+        }
+
+        // Display All Items
+        public void DisplayAllItems(string allItemsOutput)
+        {
+            Console.WriteLine();
+            Console.WriteLine("Printing List");
+            Console.WriteLine();
+            Console.WriteLine(allItemsOutput);
+        }
+
+        // Display All Items Error
+        public void DisplayAllItemsError()
+        {
+            Console.WriteLine();
+            //Console.ForegroundColor = ConsoleColor.Red;
+            Console.WriteLine("There are no items in the list to print");
+            //Console.ForegroundColor = ConsoleColor.Gray;
         }
     }
 }

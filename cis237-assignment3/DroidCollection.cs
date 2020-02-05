@@ -10,8 +10,13 @@ namespace cis237_assignment3
     {
         // Makes an array to hold instances of droids in DroidCollection class
         DroidCollection[] droids = new DroidCollection[100];
+
+        //string[] droids;
         
-        droids[0] = new DroidCollection("d");
+        public void StoreDroids()
+        {
+            droids[0] = new DroidCollection("d");
+        }
 
     }
 }
