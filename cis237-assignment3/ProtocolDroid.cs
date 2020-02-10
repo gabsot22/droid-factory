@@ -10,5 +10,38 @@ namespace cis237_assignment3
     // These are called parent class, or super class, or base class.
     class ProtocolDroid : Droid
     {
+        //*****************************
+        //Variable / Backing fields
+        //*****************************
+        private int numberLanguages;
+
+        // Constant
+        private const int costPerLanguage = 2;
+
+        //*****************************
+        //Properties
+        //*****************************
+        public override decimal CalculateTotalCost
+        {
+            get
+            {
+                return baseCost + (numberLanguages * costPerLanguage);
+            }
+        }
+
+        //******************************
+        //Public Methods
+        //******************************
+        public override string ToString()
+        {
+            return base.ToString() + " " + CalculateTotalCost.ToString("C");
+        }
+
+        public string GetTotalCostDetails()
+        {
+            return baseCost + " + (" + numberLanguages + " * " + costPerLanguage + ") =" + CalculateTotalCost.ToString("C");
+        }
+
+
     }
 }

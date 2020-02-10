@@ -60,8 +60,10 @@ namespace cis237_assignment3
         {
             string name = this.GetNameField("Name");
             string type = this.GetTypeField("Type");
+            string material = this.GetMaterialField("Material");
+            string color = this.GetColorField("Color");
 
-            return new string[] { name, type };
+            return new string[] { name, type, material, color };
         }
 
         // Display All Items
@@ -96,7 +98,7 @@ namespace cis237_assignment3
         }
 
         // Display Droid Already Exists Error
-        public void DisplayItemAlreadyExistsError()
+        public void DisplayDroidAlreadyExistsError()
         {
             Console.WriteLine();
             Console.ForegroundColor = ConsoleColor.Red;
@@ -165,7 +167,7 @@ namespace cis237_assignment3
             return returnValue;
         }
 
-        // Get a valid string field from the console
+        // Get a valid name field from the console
         private string GetNameField(string fieldName)
         {
             Console.WriteLine("What is the new Droid's {0}", fieldName);
@@ -191,8 +193,66 @@ namespace cis237_assignment3
             return value;
         }
 
-        // Get a valid string field from the console
+
+
+        // Get a valid type field from the console
         private string GetTypeField(string fieldName)
+        {
+            Console.WriteLine("What is the new Droids's {0}", fieldName);
+            Console.WriteLine("Protocol -- Utility -- Janitor -- Astromech");
+            string value = null;
+            bool valid = false;
+            while (!valid)
+            {
+                value = Console.ReadLine();
+                if (!String.IsNullOrWhiteSpace(value))
+                {
+                    valid = true;
+                }
+                else
+                {
+                    Console.ForegroundColor = ConsoleColor.Red;
+                    Console.WriteLine("You must provide a value.");
+                    Console.ForegroundColor = ConsoleColor.Gray;
+                    Console.WriteLine();
+                    Console.WriteLine("What is the new Droids's {0}", fieldName);
+                    Console.WriteLine("Protocol -- Utility -- Janitor -- Astromech");
+                    Console.Write("> ");
+                }
+            }
+            return value;
+        }
+
+        // Get a valid material field from the console
+        private string GetMaterialField(string fieldName)
+        {
+            Console.WriteLine("What is the new Droids's {0}", fieldName);
+            Console.WriteLine("Iron -- Gold -- Amethyst");
+            string value = null;
+            bool valid = false;
+            while (!valid)
+            {
+                value = Console.ReadLine();
+                if (!String.IsNullOrWhiteSpace(value))
+                {
+                    valid = true;
+                }
+                else
+                {
+                    Console.ForegroundColor = ConsoleColor.Red;
+                    Console.WriteLine("You must provide a value.");
+                    Console.ForegroundColor = ConsoleColor.Gray;
+                    Console.WriteLine();
+                    Console.WriteLine("What is the new Droids's {0}", fieldName);
+                    Console.WriteLine("Iron -- Gold -- Amethyst");
+                    Console.Write("> ");
+                }
+            }
+            return value;
+        }
+
+        // Get a valid color field from the console
+        private string GetColorField(string fieldName)
         {
             Console.WriteLine("What is the new Droids's {0}", fieldName);
             string value = null;
@@ -217,12 +277,15 @@ namespace cis237_assignment3
             return value;
         }
 
+
+
+
         // Get a string formatted as a header for items
         private string GetDroidHeader()
         {
-            return String.Format("{0,-6} {1,-55} {2,-15}", "Name", "Type", "Price") +
+            return String.Format("{0,-6} {1,-55} {2,-15} {3,6}", "Name", "Type", "Material", "Color") +
                 Environment.NewLine +
-                String.Format("{0,-6} {1,-55} {2,-15}", new String('-', 6), new String('-', 40), new String('-', 15));
+                String.Format("{0,-6} {1,-55} {2,-15} {3,6}", new String('-', 6), new String('-', 40), new String('-', 15), new String('-', 6));
         }
     }
 }

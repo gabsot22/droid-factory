@@ -20,10 +20,10 @@ namespace cis237_assignment3
             IDroid[] droids = new IDroid[100];
 
             // array to hold droids
-            droids[0] = new AstromechDroid("R2D2", "Astromech", 50.00m);
-            droids[1] = new ProtocolDroid("R2D2", "Protocol", 25.00m);
-            droids[2] = new UtilityDroid("R2D2", "Utility", 15.00m);
-            droids[3] = new JanitorDroid("A1Z4", "Janitor", 5.00m);
+            droids[0] = new ProtocolDroid("C3PO", "Protocol", "Gold", "Gold", 35.00m, 45.00m);
+            droids[1] = new UtilityDroid("BD1", "Utility", "Amethyst", "Red", 30.00m, 33.00m);
+            droids[2] = new AstromechDroid("R2D2", "Astromech", "Iron", "Blue", 55.00m, 57.00m);   
+            droids[3] = new JanitorDroid("A1Z4", "Janitor", "Iron", "Black", 10.00m, 12.00m);
 
 
             // Create an instance of the DroidCollection class
@@ -47,21 +47,18 @@ namespace cis237_assignment3
                 {
                     // Add A New Droid To The List
                     case 1:
-                        string[] newItemInformation = ui.GetNewDroidInformation();
-                        if (droidCollection.FindById(newItemInformation[0]) == null)
+                        // Calls the UI for new Droid info and sets it to an array string
+                        string[] newDroidInformation = ui.GetNewDroidInformation();
+                        // NEED TO CALCULATE THE COSTS HERE OR DURING THE UI STEPS AFTER ASKING WHAT COLOR USER WANTS
+
+                        if (droidCollection.FindDroidName(newDroidInformation[0]) == null)
                         {
-                            droidCollection.AddNewItem(
-                                newItemInformation[0],
-                                newItemInformation[1],
-                                newItemInformation[2],
-                                decimal.Parse(newItemInformation[3]),
-                                (newItemInformation[4] == "True")
-                            );
+                            droidCollection.AddNewDroid(newDroidInformation[0], newDroidInformation[1], newDroidInformation[2], newDroidInformation[3], decimal.Parse(newDroidInformation[4]), decimal.Parse(newDroidInformation[5]));
                             ui.DisplayAddDroidItemSuccess();
                         }
                         else
                         {
-                            ui.DisplayItemAlreadyExistsError();
+                            ui.DisplayDroidAlreadyExistsError();
                         }
                         break;
 

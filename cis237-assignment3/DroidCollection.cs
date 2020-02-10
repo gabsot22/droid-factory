@@ -9,10 +9,6 @@ namespace cis237_assignment3
     class DroidCollection
     {
         
-
-
-        
-
         // Private Variables
         private Droid[] droids;
         private int droidLength;
@@ -25,11 +21,10 @@ namespace cis237_assignment3
         }
 
         // Add a new Droid to the collection
-        public void AddNewDroid(string name, string type, decimal price)
+        public void AddNewDroid(string name, string type, string material, string color)
         {
+            droids[droidLength] = new Droid(name, type, material, color);
             droidLength++;
-            droids[droidLength] = new Droid(name, type, price);
-            
         }
 
         // ToString override method to convert the collection to a string
@@ -50,6 +45,30 @@ namespace cis237_assignment3
             // Return the return string
             return returnString;
         }
-        
+
+        // Find an item by Droid's Name
+        public string FindDroidName(string name)
+        {
+            // Declare return string for the possible found item
+            string returnString = null;
+
+            // For each Droid in droids
+            foreach (Droid droid in droids)
+            {
+                // If the beverage is not null
+                if (droid != null)
+                {
+                    // If the droid Name is the same as the search Name{
+                    if (droid.Name == name)
+                    {
+                        // Set the return string to the result of the droid's ToString method
+                        returnString = droid.ToString();
+                    }
+                }
+            }
+            // Return the returnString
+            return returnString;
+        }
+         
     }
 }
