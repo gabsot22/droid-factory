@@ -23,6 +23,7 @@ namespace cis237_assignment3
         // Must be protected so that they are available in the child / derived classes.
         protected string name;
         protected string type;
+
         protected string material;
         protected string color;
         protected decimal baseCost;

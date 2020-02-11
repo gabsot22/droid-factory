@@ -53,7 +53,7 @@ namespace cis237_assignment3
 
                         if (droidCollection.FindDroidName(newDroidInformation[0]) == null)
                         {
-                            droidCollection.AddNewDroid(newDroidInformation[0], newDroidInformation[1], newDroidInformation[2], newDroidInformation[3], decimal.Parse(newDroidInformation[4]), decimal.Parse(newDroidInformation[5]));
+                            //droidCollection.AddNewDroid(newDroidInformation[0], newDroidInformation[1], newDroidInformation[2], newDroidInformation[3], decimal.Parse(newDroidInformation[4]), decimal.Parse(newDroidInformation[5]));
                             ui.DisplayAddDroidItemSuccess();
                         }
                         else
