@@ -10,7 +10,7 @@ namespace cis237_assignment3
         string GetFullScreenOutput();
 
         // Method to calculate the total cost of a droid
-        string CalculateTotalCost();
+        decimal CalculateTotalCost();
 
         // Property to get the total cost of a droid
         decimal TotalCost { get; }

@@ -20,10 +20,10 @@ namespace cis237_assignment3
             IDroid[] droids = new IDroid[100];
 
             // array to hold droids
-            droids[0] = new ProtocolDroid("C3PO", "Protocol", "Gold", "Gold", 35.00m, 45.00m);
-            droids[1] = new UtilityDroid("BD1", "Utility", "Amethyst", "Red", 30.00m, 33.00m);
-            droids[2] = new AstromechDroid("R2D2", "Astromech", "Iron", "Blue", 55.00m, 57.00m);   
-            droids[3] = new JanitorDroid("A1Z4", "Janitor", "Iron", "Black", 10.00m, 12.00m);
+            droids[0] = new ProtocolDroid("C3PO", "Protocol", "Gold", "Gold", 5); //droids[0] = new ProtocolDroid("C3PO", "Protocol", "Gold", "Gold", 35.00m, 45.00m);
+            droids[1] = new UtilityDroid("BD1", "Utility", "Amethyst", "Red", true, true, true);
+            //droids[2] = new AstromechDroid("R2D2", "Astromech", "Iron", "Blue", 55.00m, 57.00m);   
+            //droids[3] = new JanitorDroid("A1Z4", "Janitor", "Iron", "Black", 10.00m, 12.00m);
 
 
             // Create an instance of the DroidCollection class

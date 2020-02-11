@@ -21,7 +21,7 @@ namespace cis237_assignment3
         //*****************************
         //Properties
         //*****************************
-        public override decimal CalculateTotalCost
+        public override decimal TotalCost
         {
             get
             {
@@ -34,12 +34,43 @@ namespace cis237_assignment3
         //******************************
         public override string ToString()
         {
-            return base.ToString() + " " + CalculateTotalCost.ToString("C");
+            // Ask the parent to do the first and last name part by
+            // calling ToString on the parent/base class
+            return base.ToString() + " " + TotalCost.ToString("C");
+            // Does not have to be the same method. Could be a different one.
+            // This would work too.
+            // return base.FirstAndLastName() + " " + Salary.ToString("C");
         }
 
         public string GetTotalCostDetails()
         {
-            return baseCost + " + (" + numberLanguages + " * " + costPerLanguage + ") =" + CalculateTotalCost.ToString("C");
+            return baseCost + " + (" + numberLanguages + " * " + costPerLanguage + ") =" + TotalCost.ToString("C");
+        }
+
+        // Added this so that we override the abstract method in the parent.
+        // We were required to do so because the method was abstract.
+        public override decimal CalculateTotalCost()
+        {
+            return TotalCost;
+        }
+
+        //*****************************
+        //Constructors
+        //*****************************
+        public TotalCost(
+            string Name,
+            string Type,
+            string Material,
+            string Color,
+            int NumberLanguages
+        // Call the parent constructor with the base keyword and send it
+        // the first and last name we just collected from the parameters
+        // above this comment.
+        ) : base(Name, Type, Material, Color)
+        {
+            // No need to set the first and last name variables.
+            // will be handled by the parent/base constructor.
+            this.numberLanguages = NumberLanguages;
         }
 
 

@@ -10,9 +10,9 @@ namespace cis237_assignment3
     {
 
         // Constants
-        protected const decimal IRON = 5;
-        protected const decimal GOLD = 10;
-        protected const decimal AMETHYST = 15;
+        protected const int TOOL_BOX_CONST = 1;
+        protected const int COMPUTER_CONNECTION_CONST = 1;
+        protected const int ARM_CONST = 1;
 
         //*****************************
         // Class level Variables
@@ -23,7 +23,7 @@ namespace cis237_assignment3
         // Must be protected so that they are available in the child / derived classes.
         protected string name;
         protected string type;
-
+        
         protected string material;
         protected string color;
         protected decimal baseCost;
@@ -43,7 +43,7 @@ namespace cis237_assignment3
         }
 
         // Forces child classes to make a Salary Property.
-        public abstract decimal CalculateTotalCost { get; }
+        public abstract decimal TotalCost { get; }
 
         // LOOK AT THE PRICE ABSTRACT DECMAL AND COMPARE!!!!!!!!!!!!!!!!!
 
@@ -52,7 +52,8 @@ namespace cis237_assignment3
         //***************************
         protected decimal CalculateBaseCost()
         {
-            return IRON;
+
+            return decimal.Parse(type + material);
         }
 
         //***************************
@@ -71,7 +72,7 @@ namespace cis237_assignment3
             // 2. Any intstance must therefor override the Salary property and provide
             // an implementation for it.
             // Because of this, this method will always work.
-            return name + " " + type + " " + material + " " + color + " " + CalculateBaseCost.ToString("C") + " " + CalculateTotalCost.ToString("C");
+            return name + " " + type + " " + material + " " + color + " " + CalculateBaseCost().ToString("C") + " " + TotalCost.ToString("C");
         }
 
         // Made this method virtual so that child classes could provide a different
@@ -85,8 +86,7 @@ namespace cis237_assignment3
         // An Abstract method. This means that it MUST be overridden
         // by child classes. It also can not have a method body and
         // can only be declared in a abstract class.
-
-        public abstract decimal GetCalculateTotalCost();
+        public abstract decimal CalculateTotalCost();
 
 
 
@@ -99,6 +99,7 @@ namespace cis237_assignment3
             this.type = Type;
             this.material = Material;
             this.color = Color;
+            
         }
         
     }
