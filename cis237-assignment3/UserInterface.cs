@@ -35,7 +35,7 @@ namespace cis237_assignment3
             // Display menu, and prompt
             this.DisplayMenu();
             this.DisplayPrompt();
-
+            
             // Get the selection they enter
             selection = this.GetSelection();
 
@@ -62,7 +62,7 @@ namespace cis237_assignment3
             string type = this.GetTypeField("Type");
             string material = this.GetMaterialField("Material");
             string color = this.GetColorField("Color");
-
+            
             return new string[] { name, type, material, color };
         }
 
@@ -276,8 +276,6 @@ namespace cis237_assignment3
             }
             return value;
         }
-
-
 
 
         // Get a string formatted as a header for items

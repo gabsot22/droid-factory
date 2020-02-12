@@ -10,9 +10,16 @@ namespace cis237_assignment3
     {
 
         // Constants
+        // Additional Options
         protected const int TOOL_BOX_CONST = 1;
         protected const int COMPUTER_CONNECTION_CONST = 1;
         protected const int ARM_CONST = 1;
+        protected const int FIRE_EXTINGUISHER_CONST = 1;
+        protected const int TRASH_COMPACTOR_CONST = 1;
+        protected const int VACUUM_CONST = 1;
+
+        protected const int NUMBER_OF_SHIPS_CONST = 3;
+        
 
         //*****************************
         // Class level Variables

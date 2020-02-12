@@ -13,9 +13,9 @@ namespace cis237_assignment3
         //*****************************
         //Variable / Backing fields
         //*****************************
-        private bool toolbox;
-        private bool computerConnection;
-        private bool arm;
+        protected bool toolbox;
+        protected bool computerConnection;
+        protected bool arm;
 
         //*****************************
         //Properties
