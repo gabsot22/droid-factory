@@ -17,7 +17,7 @@ namespace cis237_assignment3
             UserInterface ui = new UserInterface();
 
             //Let's make an array to hold a bunch of instances of the Employee class
-            IDroid[] droids = new IDroid[100];
+            Droid[] droids = new Droid[100];
 
             // array to hold droids
             droids[0] = new ProtocolDroid("C3PO", "Protocol", "Gold", "Gold", 5); //droids[0] = new ProtocolDroid("C3PO", "Protocol", "Gold", "Gold", 35.00m, 45.00m);
@@ -43,35 +43,104 @@ namespace cis237_assignment3
                 {
                     // Add A New Droid To The List
                     case 1:
+                        string type = ui.GetDroidTypeInformation();
                         // Calls the UI for new Droid info and sets it to an array string
-                        string[] newDroidInformation = ui.GetNewDroidInformation();
-                        // NEED TO CALCULATE THE COSTS HERE OR DURING THE UI STEPS AFTER ASKING WHAT COLOR USER WANTS
+                        if (type == "Protocol")
+                        {
+                            Console.WriteLine();
+                            Console.WriteLine("You selected Protocol");
+                            string[] newDroidInformation = ui.GetNewProtocolDroidInformation();
+                            droidCollection.AddNewProtocolDroid(newDroidInformation[0],
+                                                                newDroidInformation[1], 
+                                                                newDroidInformation[2], 
+                                                                newDroidInformation[3], 
+                                                                int.Parse(newDroidInformation[4]));
+                        }
+                        if (type == "Utility")
+                        {
+                            Console.WriteLine();
+                            Console.WriteLine("You selected Utility");
+                            string[] newDroidInformation = ui.GetNewUtilityDroidInformation();
+                            droidCollection.AddNewUtilityDroid(newDroidInformation[0], 
+                                                               newDroidInformation[1], 
+                                                               newDroidInformation[2], 
+                                                               newDroidInformation[3], 
+                                                               bool.Parse(newDroidInformation[4]), 
+                                                               bool.Parse(newDroidInformation[5]), 
+                                                               bool.Parse(newDroidInformation[6]));
+                        }
+                        if (type == "Janitor")
+                        {
+                            Console.WriteLine();
+                            Console.WriteLine("You selected Janitor");
+                            string[] newDroidInformation = ui.GetNewJanitorDroidInformation();
+                            droidCollection.AddNewJanitorDroid(newDroidInformation[0],
+                                                               newDroidInformation[1],
+                                                               newDroidInformation[2],
+                                                               newDroidInformation[3],
+                                                               bool.Parse(newDroidInformation[4]),
+                                                               bool.Parse(newDroidInformation[5]),
+                                                               bool.Parse(newDroidInformation[6]),
+                                                               bool.Parse(newDroidInformation[7]),
+                                                               bool.Parse(newDroidInformation[8]));
+                        }
+                        if (type == "Astromech")
+                        {
+                            Console.WriteLine();
+                            Console.WriteLine("You selected Astromech");
+                            string[] newDroidInformation = ui.GetNewAstromechDroidInformation();
+                            droidCollection.AddNewAstromechDroid(newDroidInformation[0],
+                                                               newDroidInformation[1],
+                                                               newDroidInformation[2],
+                                                               newDroidInformation[3],
+                                                               bool.Parse(newDroidInformation[4]),
+                                                               bool.Parse(newDroidInformation[5]),
+                                                               bool.Parse(newDroidInformation[6]),
+                                                               bool.Parse(newDroidInformation[7]),
+                                                               int.Parse(newDroidInformation[8]));
+                        }
 
-                        if (droidCollection.FindDroidName(newDroidInformation[0]) == null)
-                        {
-                            //droidCollection.AddNewDroid(newDroidInformation[0], newDroidInformation[1], newDroidInformation[2], newDroidInformation[3], int.Parse(), decimal.Parse(newDroidInformation[5]));
-                            ui.DisplayAddDroidItemSuccess();
-                        }
-                        else
-                        {
-                            ui.DisplayDroidAlreadyExistsError();
-                        }
+                        ui.DisplayAddDroidItemSuccess();
+
+       
+
+                        //if (droidCollection.FindDroidName(newDroidInformation[0]) == null)
+                        //{
+                        //    droidCollection.AddNewDroid(newDroidInformation[0], newDroidInformation[1], newDroidInformation[2], newDroidInformation[3], int.Parse(), decimal.Parse(newDroidInformation[5]));
+                        //    ui.DisplayAddDroidItemSuccess();
+                        //}
+                        //else
+                        //{
+                        //    ui.DisplayDroidAlreadyExistsError();
+                        //}
                         break;
 
                     // Print Droid List
                     case 2:
-                        
-                        string allDroidsString = droidCollection.ToString();
-                        if (!String.IsNullOrWhiteSpace(allDroidsString))
+                        string outputString = "";
+
+                        foreach (Droid droid in droids)
                         {
-                            // Display all of the items
-                            ui.DisplayAllItems(allDroidsString);
+                            if (droid != null)
+                            {
+                                //Concat to the outputString
+                                outputString += droid.GetFullScreenOutput() +
+                                    Environment.NewLine;
+                            }
                         }
-                        else
-                        {
-                            // Display error message for all items
-                            ui.DisplayAllItemsError();
-                        }
+
+
+                        //string allDroidsString = droidCollection.ToString();
+                        //if (!String.IsNullOrWhiteSpace(allDroidsString))
+                        //{
+                        //    // Display all of the items
+                        //    ui.DisplayAllItems(allDroidsString);
+                        //}
+                        //else
+                        //{
+                        //    // Display error message for all items
+                        //    ui.DisplayAllItemsError();
+                        //}
                         break;
                 }
 

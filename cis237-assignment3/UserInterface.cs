@@ -55,7 +55,76 @@ namespace cis237_assignment3
             return Int32.Parse(selection);
         }
 
-        // Get New Item Information From The User.
+        // Get Droid Type From The User
+        public string GetDroidTypeInformation()
+        {
+            Console.WriteLine();
+            Console.WriteLine("Enter Droid Type:");
+            Console.WriteLine("Protocol -- Utility -- Janitor -- Astromech");         
+            string type = Console.ReadLine();
+            
+            return type;
+        }
+
+        // Get New Protocol Droid Information From The User.
+        public string[] GetNewProtocolDroidInformation()
+        {
+            string name = this.GetNameField("Name");
+            string type = this.GetTypeField("Type");
+            string material = this.GetMaterialField("Material");
+            string color = this.GetColorField("Color");
+            string numberLanguages = this.GetNumberLanguagesField("Number of Languages");
+
+            return new string[] { name, type, material, color, numberLanguages };
+        }
+
+        // Get New Utility Droid Information From The User.
+        public string[] GetNewUtilityDroidInformation()
+        {
+            string name = this.GetNameField("Name");
+            string type = this.GetTypeField("Type");
+            string material = this.GetMaterialField("Material");
+            string color = this.GetColorField("Color");
+            string toolBox = this.GetToolBoxField("Tool Box");
+            string computerConnection = this.GetComputerConnectionField("Computer Connection");
+            string arm = this.GetArmField("Arm");
+
+            return new string[] { name, type, material, color, toolBox, computerConnection, arm };
+        }
+
+        // Get New Janitor Droid Information From The User.
+        public string[] GetNewJanitorDroidInformation()
+        {
+            string name = this.GetNameField("Name");
+            string type = this.GetTypeField("Type");
+            string material = this.GetMaterialField("Material");
+            string color = this.GetColorField("Color");
+            string toolBox = this.GetToolBoxField("Tool Box");
+            string computerConnection = this.GetComputerConnectionField("Computer Connection");
+            string arm = this.GetArmField("Arm");
+            string trashCompactor = this.GetTrashCompactorField("Trash Compactor");
+            string vacuum = this.GetVacuumField("Vacuum");
+
+            return new string[] { name, type, material, color, toolBox, computerConnection, arm, trashCompactor, vacuum };
+        }
+
+        // Get New Astromech Droid Information From The User.
+        public string[] GetNewAstromechDroidInformation()
+        {
+            string name = this.GetNameField("Name");
+            string type = this.GetTypeField("Type");
+            string material = this.GetMaterialField("Material");
+            string color = this.GetColorField("Color");
+            string toolBox = this.GetToolBoxField("Tool Box");
+            string computerConnection = this.GetComputerConnectionField("Computer Connection");
+            string arm = this.GetArmField("Arm");
+            string fireExtinguisher = this.GetFireExtinguisherField("Fire Extinguisher");
+            string numOfShips = this.GetNumOfShipsField("Number of Ships");
+
+            return new string[] { name, type, material, color, toolBox, computerConnection, arm, fireExtinguisher, numOfShips };
+        }
+
+        // Get New Droid Information From The User.
         public string[] GetNewDroidInformation()
         {
             string name = this.GetNameField("Name");
@@ -65,6 +134,8 @@ namespace cis237_assignment3
             
             return new string[] { name, type, material, color };
         }
+
+        
 
         // Display All Items
         public void DisplayAllItems(string allItemsOutput)
@@ -170,6 +241,7 @@ namespace cis237_assignment3
         // Get a valid name field from the console
         private string GetNameField(string fieldName)
         {
+            Console.WriteLine();
             Console.WriteLine("What is the new Droid's {0}", fieldName);
             string value = null;
             bool valid = false;
@@ -198,7 +270,8 @@ namespace cis237_assignment3
         // Get a valid type field from the console
         private string GetTypeField(string fieldName)
         {
-            Console.WriteLine("What is the new Droids's {0}", fieldName);
+            Console.WriteLine();
+            Console.WriteLine("Confirm Droid's {0}", fieldName);
             Console.WriteLine("Protocol -- Utility -- Janitor -- Astromech");
             string value = null;
             bool valid = false;
@@ -206,25 +279,7 @@ namespace cis237_assignment3
             {
                 value = Console.ReadLine();
                 if (!String.IsNullOrWhiteSpace(value))
-                {
-                    if (value == "Protocol")
-                    {
-                        Console.WriteLine("Enter number of languages: ");
-                        //numberO Console.Read();
-                    }
-                    if (value == "Utility")
-                    {
-                        Console.WriteLine("Do you want a Toolbox?");
-                        Console.Read();
-                    }
-                    if (value == "Janitor")
-                    {
-
-                    }
-                    if (value == "Astromech")
-                    {
-
-                    }
+                { 
                     valid = true;
                 }
                 else
@@ -233,7 +288,7 @@ namespace cis237_assignment3
                     Console.WriteLine("You must provide a value.");
                     Console.ForegroundColor = ConsoleColor.Gray;
                     Console.WriteLine();
-                    Console.WriteLine("What is the new Droids's {0}", fieldName);
+                    Console.WriteLine("Confirm Droid's {0}", fieldName);
                     Console.WriteLine("Protocol -- Utility -- Janitor -- Astromech");
                     Console.Write("> ");
                 }
@@ -244,6 +299,7 @@ namespace cis237_assignment3
         // Get a valid material field from the console
         private string GetMaterialField(string fieldName)
         {
+            Console.WriteLine();
             Console.WriteLine("What is the new Droids's {0}", fieldName);
             Console.WriteLine("Iron -- Gold -- Amethyst");
             string value = null;
@@ -273,6 +329,7 @@ namespace cis237_assignment3
         // Get a valid color field from the console
         private string GetColorField(string fieldName)
         {
+            Console.WriteLine();
             Console.WriteLine("What is the new Droids's {0}", fieldName);
             string value = null;
             bool valid = false;
@@ -295,6 +352,237 @@ namespace cis237_assignment3
             }
             return value;
         }
+
+        // Get valid decimal field from the user
+        private string GetNumberLanguagesField(string fieldName)
+        {
+            Console.WriteLine();
+            Console.WriteLine("What is the new Droid's {0}", fieldName);
+            decimal value = 0;
+            bool valid = false;
+            while (!valid)
+            {
+                try
+                {
+                    value = decimal.Parse(Console.ReadLine());
+                    valid = true;
+                }
+                catch (Exception)
+                {
+                    Console.ForegroundColor = ConsoleColor.Red;
+                    Console.WriteLine("That is not a valid Decimal. Please enter a valid Decimal.");
+                    Console.ForegroundColor = ConsoleColor.Gray;
+                    Console.WriteLine();
+                    Console.WriteLine("What is the new Droids's {0}", fieldName);
+                    Console.Write("> ");
+                }
+            }
+            return value.ToString();
+        }
+
+        // Get valid bool field from the user
+        private string GetToolBoxField(string fieldName)
+        {
+            Console.WriteLine();
+            Console.WriteLine("Does Droid have a {0}? (T/F)", fieldName);
+            string input = null;
+            bool value = false;
+            bool valid = false;
+            while (!valid)
+            {
+                input = Console.ReadLine();
+                if (input.ToLower() == "y" || input.ToLower() == "n")
+                {
+                    valid = true;
+                    value = (input.ToLower() == "y");
+                }
+                else
+                {
+                    Console.ForegroundColor = ConsoleColor.Red;
+                    Console.WriteLine("That is not a valid Entry.");
+                    Console.ForegroundColor = ConsoleColor.Gray;
+                    Console.WriteLine();
+                    Console.WriteLine("Does Droid have a {0}? (T/F)", fieldName);
+                    Console.Write("> ");
+                }
+            }
+            return value.ToString();
+        }
+
+        // Get valid bool field from the user
+        private string GetComputerConnectionField(string fieldName)
+        {
+            Console.WriteLine();
+            Console.WriteLine("Does Droid have a {0}? (T/F)", fieldName);
+            string input = null;
+            bool value = false;
+            bool valid = false;
+            while (!valid)
+            {
+                input = Console.ReadLine();
+                if (input.ToLower() == "y" || input.ToLower() == "n")
+                {
+                    valid = true;
+                    value = (input.ToLower() == "y");
+                }
+                else
+                {
+                    Console.ForegroundColor = ConsoleColor.Red;
+                    Console.WriteLine("That is not a valid Entry.");
+                    Console.ForegroundColor = ConsoleColor.Gray;
+                    Console.WriteLine();
+                    Console.WriteLine("Does Droid have a {0}? (T/F)", fieldName);
+                    Console.Write("> ");
+                }
+            }
+            return value.ToString();
+        }
+
+        // Get valid bool field from the user
+        private string GetArmField(string fieldName)
+        {
+            Console.WriteLine();
+            Console.WriteLine("Does Droid have a {0}? (T/F)", fieldName);
+            string input = null;
+            bool value = false;
+            bool valid = false;
+            while (!valid)
+            {
+                input = Console.ReadLine();
+                if (input.ToLower() == "y" || input.ToLower() == "n")
+                {
+                    valid = true;
+                    value = (input.ToLower() == "y");
+                }
+                else
+                {
+                    Console.ForegroundColor = ConsoleColor.Red;
+                    Console.WriteLine("That is not a valid Entry.");
+                    Console.ForegroundColor = ConsoleColor.Gray;
+                    Console.WriteLine();
+                    Console.WriteLine("Does Droid have a {0}? (T/F)", fieldName);
+                    Console.Write("> ");
+                }
+            }
+            return value.ToString();
+        }
+
+        // Get valid bool field from the user
+        private string GetTrashCompactorField(string fieldName)
+        {
+            Console.WriteLine();
+            Console.WriteLine("Does Droid have a {0}? (T/F)", fieldName);
+            string input = null;
+            bool value = false;
+            bool valid = false;
+            while (!valid)
+            {
+                input = Console.ReadLine();
+                if (input.ToLower() == "y" || input.ToLower() == "n")
+                {
+                    valid = true;
+                    value = (input.ToLower() == "y");
+                }
+                else
+                {
+                    Console.ForegroundColor = ConsoleColor.Red;
+                    Console.WriteLine("That is not a valid Entry.");
+                    Console.ForegroundColor = ConsoleColor.Gray;
+                    Console.WriteLine();
+                    Console.WriteLine("Does Droid have a {0}? (T/F)", fieldName);
+                    Console.Write("> ");
+                }
+            }
+            return value.ToString();
+        }
+
+        // Get valid bool field from the user
+        private string GetVacuumField(string fieldName)
+        {
+            Console.WriteLine();
+            Console.WriteLine("Does Droid have a {0}? (T/F)", fieldName);
+            string input = null;
+            bool value = false;
+            bool valid = false;
+            while (!valid)
+            {
+                input = Console.ReadLine();
+                if (input.ToLower() == "y" || input.ToLower() == "n")
+                {
+                    valid = true;
+                    value = (input.ToLower() == "y");
+                }
+                else
+                {
+                    Console.ForegroundColor = ConsoleColor.Red;
+                    Console.WriteLine("That is not a valid Entry.");
+                    Console.ForegroundColor = ConsoleColor.Gray;
+                    Console.WriteLine();
+                    Console.WriteLine("Does Droid have a {0}? (T/F)", fieldName);
+                    Console.Write("> ");
+                }
+            }
+            return value.ToString();
+        }
+
+
+        // Get valid bool field from the user
+        private string GetFireExtinguisherField(string fieldName)
+        {
+            Console.WriteLine();
+            Console.WriteLine("Does Droid have a {0}? (T/F)", fieldName);
+            string input = null;
+            bool value = false;
+            bool valid = false;
+            while (!valid)
+            {
+                input = Console.ReadLine();
+                if (input.ToLower() == "y" || input.ToLower() == "n")
+                {
+                    valid = true;
+                    value = (input.ToLower() == "y");
+                }
+                else
+                {
+                    Console.ForegroundColor = ConsoleColor.Red;
+                    Console.WriteLine("That is not a valid Entry.");
+                    Console.ForegroundColor = ConsoleColor.Gray;
+                    Console.WriteLine();
+                    Console.WriteLine("Does Droid have a {0}? (T/F)", fieldName);
+                    Console.Write("> ");
+                }
+            }
+            return value.ToString();
+        }
+
+        // Get valid decimal field from the user
+        private string GetNumOfShipsField(string fieldName)
+        {
+            Console.WriteLine();
+            Console.WriteLine("{0} for the Droid", fieldName);
+            decimal value = 0;
+            bool valid = false;
+            while (!valid)
+            {
+                try
+                {
+                    value = decimal.Parse(Console.ReadLine());
+                    valid = true;
+                }
+                catch (Exception)
+                {
+                    Console.ForegroundColor = ConsoleColor.Red;
+                    Console.WriteLine("That is not a valid Decimal. Please enter a valid Decimal.");
+                    Console.ForegroundColor = ConsoleColor.Gray;
+                    Console.WriteLine();
+                    Console.WriteLine("{0} for the Droid", fieldName);
+                    Console.Write("> ");
+                }
+            }
+            return value.ToString();
+        }
+
+
 
 
         // Get a string formatted as a header for items
