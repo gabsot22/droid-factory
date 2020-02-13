@@ -61,7 +61,7 @@ namespace cis237_assignment3
         //*****************************
         //Constructors
         //*****************************
-        public TotalCost(
+        public JanitorDroid(
             string Name,
             string Type,
             string Material,

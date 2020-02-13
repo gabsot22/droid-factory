@@ -29,10 +29,6 @@ namespace cis237_assignment3
             // Create an instance of the DroidCollection class
             DroidCollection droidCollection = new DroidCollection(droidCollectionSize);
 
-            // Add some droids to the array
-
-
-
             // Display the Welcome Message to the user
             ui.DisplayWelcomeGreeting();
 
@@ -53,7 +49,7 @@ namespace cis237_assignment3
 
                         if (droidCollection.FindDroidName(newDroidInformation[0]) == null)
                         {
-                            //droidCollection.AddNewDroid(newDroidInformation[0], newDroidInformation[1], newDroidInformation[2], newDroidInformation[3], decimal.Parse(newDroidInformation[4]), decimal.Parse(newDroidInformation[5]));
+                            //droidCollection.AddNewDroid(newDroidInformation[0], newDroidInformation[1], newDroidInformation[2], newDroidInformation[3], int.Parse(), decimal.Parse(newDroidInformation[5]));
                             ui.DisplayAddDroidItemSuccess();
                         }
                         else

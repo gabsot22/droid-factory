@@ -13,7 +13,7 @@ namespace cis237_assignment3
         //*****************************
         //Variable / Backing fields
         //*****************************
-        private int numberLanguages;
+        public int numberLanguages;
 
         // Constant
         private const int costPerLanguage = 2;
@@ -57,7 +57,7 @@ namespace cis237_assignment3
         //*****************************
         //Constructors
         //*****************************
-        public TotalCost(
+        public ProtocolDroid(
             string Name,
             string Type,
             string Material,

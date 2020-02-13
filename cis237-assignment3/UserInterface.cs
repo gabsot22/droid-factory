@@ -207,6 +207,24 @@ namespace cis237_assignment3
                 value = Console.ReadLine();
                 if (!String.IsNullOrWhiteSpace(value))
                 {
+                    if (value == "Protocol")
+                    {
+                        Console.WriteLine("Enter number of languages: ");
+                        //numberO Console.Read();
+                    }
+                    if (value == "Utility")
+                    {
+                        Console.WriteLine("Do you want a Toolbox?");
+                        Console.Read();
+                    }
+                    if (value == "Janitor")
+                    {
+
+                    }
+                    if (value == "Astromech")
+                    {
+
+                    }
                     valid = true;
                 }
                 else
@@ -235,6 +253,7 @@ namespace cis237_assignment3
                 value = Console.ReadLine();
                 if (!String.IsNullOrWhiteSpace(value))
                 {
+                    
                     valid = true;
                 }
                 else

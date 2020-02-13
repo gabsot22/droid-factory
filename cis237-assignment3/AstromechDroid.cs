@@ -62,7 +62,7 @@ namespace cis237_assignment3
         //*****************************
         //Constructors
         //*****************************
-        public TotalCost(
+        public AstromechDroid(
             string Name,
             string Type,
             string Material,

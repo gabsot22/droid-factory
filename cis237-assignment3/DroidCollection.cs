@@ -21,9 +21,9 @@ namespace cis237_assignment3
         }
 
         // Add a new Droid to the collection
-        public void AddNewDroid(string name, string type, string material, string color, decimal baseCost, decimal totalCost)
+        public void AddNewProtocolDroid(string name, string type, string material, string color)
         {
-            droids[droidLength] = new IDroid(name, type, material, color, baseCost, totalCost);
+            droids[droidLength] = new ProtocolDroid(name, type, material, color, 1);
             droidLength++;
         }
 
