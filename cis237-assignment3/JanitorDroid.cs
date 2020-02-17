@@ -23,7 +23,7 @@ namespace cis237_assignment3
         {
             get
             {
-                return baseCost + TOOL_BOX_CONST + COMPUTER_CONNECTION_CONST + ARM_CONST + TRASH_COMPACTOR_CONST + VACUUM_CONST;
+                return CalculateBaseCost() + TOOL_BOX_CONST + COMPUTER_CONNECTION_CONST + ARM_CONST + TRASH_COMPACTOR_CONST + VACUUM_CONST;
             }
         }
 
@@ -42,7 +42,7 @@ namespace cis237_assignment3
 
         public string GetTotalCostDetails()
         {
-            return baseCost +
+            return CalculateBaseCost() +
                 " + ToolBox: " + toolbox +
                 " + ComputerConnection: " + computerConnection +
                 " + Arm: " + arm +

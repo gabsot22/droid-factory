@@ -8,7 +8,7 @@ namespace cis237_assignment3
 {
     class UserInterface
     {
-
+        
         const int MAX_MENU_CHOICES = 3;
 
         //No Variables
@@ -62,7 +62,11 @@ namespace cis237_assignment3
             Console.WriteLine("Enter Droid Type:");
             Console.WriteLine("Protocol -- Utility -- Janitor -- Astromech");         
             string type = Console.ReadLine();
-            
+
+            Console.WriteLine();
+            Console.ForegroundColor = ConsoleColor.Cyan;
+            Console.WriteLine("You selected {0}", type);
+            Console.ForegroundColor = ConsoleColor.Gray;
             return type;
         }
 
@@ -72,8 +76,10 @@ namespace cis237_assignment3
             string name = this.GetNameField("Name");
             string type = this.GetTypeField("Type");
             string material = this.GetMaterialField("Material");
+            
             string color = this.GetColorField("Color");
             string numberLanguages = this.GetNumberLanguagesField("Number of Languages");
+            
 
             return new string[] { name, type, material, color, numberLanguages };
         }
@@ -169,13 +175,13 @@ namespace cis237_assignment3
         }
 
         // Display Droid Already Exists Error
-        public void DisplayDroidAlreadyExistsError()
-        {
-            Console.WriteLine();
-            Console.ForegroundColor = ConsoleColor.Red;
-            Console.WriteLine("A Droid With That Name Already Exists");
-            Console.ForegroundColor = ConsoleColor.Gray;
-        }
+        //public void DisplayDroidAlreadyExistsError()
+        //{
+        //    Console.WriteLine();
+        //    Console.ForegroundColor = ConsoleColor.Red;
+        //    Console.WriteLine("A Droid With That Name Already Exists");
+        //    Console.ForegroundColor = ConsoleColor.Gray;
+        //}
 
         //**********************
         // PRIVATE METHODS
@@ -242,7 +248,9 @@ namespace cis237_assignment3
         private string GetNameField(string fieldName)
         {
             Console.WriteLine();
-            Console.WriteLine("What is the new Droid's {0}", fieldName);
+            Console.ForegroundColor = ConsoleColor.Cyan;
+            Console.WriteLine("What is the new Droid's {0}?", fieldName);
+            Console.ForegroundColor = ConsoleColor.Gray;
             string value = null;
             bool valid = false;
             while (!valid)
@@ -271,7 +279,9 @@ namespace cis237_assignment3
         private string GetTypeField(string fieldName)
         {
             Console.WriteLine();
+            Console.ForegroundColor = ConsoleColor.Cyan;
             Console.WriteLine("Confirm Droid's {0}", fieldName);
+            Console.ForegroundColor = ConsoleColor.Gray;
             Console.WriteLine("Protocol -- Utility -- Janitor -- Astromech");
             string value = null;
             bool valid = false;
@@ -300,7 +310,9 @@ namespace cis237_assignment3
         private string GetMaterialField(string fieldName)
         {
             Console.WriteLine();
+            Console.ForegroundColor = ConsoleColor.Cyan;
             Console.WriteLine("What is the new Droids's {0}", fieldName);
+            Console.ForegroundColor = ConsoleColor.Gray;
             Console.WriteLine("Iron -- Gold -- Amethyst");
             string value = null;
             bool valid = false;
@@ -330,7 +342,9 @@ namespace cis237_assignment3
         private string GetColorField(string fieldName)
         {
             Console.WriteLine();
+            Console.ForegroundColor = ConsoleColor.Cyan;
             Console.WriteLine("What is the new Droids's {0}", fieldName);
+            Console.ForegroundColor = ConsoleColor.Gray;
             string value = null;
             bool valid = false;
             while (!valid)
@@ -357,7 +371,9 @@ namespace cis237_assignment3
         private string GetNumberLanguagesField(string fieldName)
         {
             Console.WriteLine();
+            Console.ForegroundColor = ConsoleColor.Cyan;
             Console.WriteLine("What is the new Droid's {0}", fieldName);
+            Console.ForegroundColor = ConsoleColor.Gray;
             decimal value = 0;
             bool valid = false;
             while (!valid)
@@ -384,7 +400,9 @@ namespace cis237_assignment3
         private string GetToolBoxField(string fieldName)
         {
             Console.WriteLine();
+            Console.ForegroundColor = ConsoleColor.Cyan;
             Console.WriteLine("Does Droid have a {0}? (T/F)", fieldName);
+            Console.ForegroundColor = ConsoleColor.Gray;
             string input = null;
             bool value = false;
             bool valid = false;
@@ -413,7 +431,9 @@ namespace cis237_assignment3
         private string GetComputerConnectionField(string fieldName)
         {
             Console.WriteLine();
+            Console.ForegroundColor = ConsoleColor.Cyan;
             Console.WriteLine("Does Droid have a {0}? (T/F)", fieldName);
+            Console.ForegroundColor = ConsoleColor.Gray;
             string input = null;
             bool value = false;
             bool valid = false;
@@ -442,7 +462,9 @@ namespace cis237_assignment3
         private string GetArmField(string fieldName)
         {
             Console.WriteLine();
+            Console.ForegroundColor = ConsoleColor.Cyan;
             Console.WriteLine("Does Droid have a {0}? (T/F)", fieldName);
+            Console.ForegroundColor = ConsoleColor.Gray;
             string input = null;
             bool value = false;
             bool valid = false;
@@ -471,7 +493,9 @@ namespace cis237_assignment3
         private string GetTrashCompactorField(string fieldName)
         {
             Console.WriteLine();
+            Console.ForegroundColor = ConsoleColor.Cyan;
             Console.WriteLine("Does Droid have a {0}? (T/F)", fieldName);
+            Console.ForegroundColor = ConsoleColor.Gray;
             string input = null;
             bool value = false;
             bool valid = false;
@@ -500,7 +524,9 @@ namespace cis237_assignment3
         private string GetVacuumField(string fieldName)
         {
             Console.WriteLine();
+            Console.ForegroundColor = ConsoleColor.Cyan;
             Console.WriteLine("Does Droid have a {0}? (T/F)", fieldName);
+            Console.ForegroundColor = ConsoleColor.Gray;
             string input = null;
             bool value = false;
             bool valid = false;
@@ -530,7 +556,9 @@ namespace cis237_assignment3
         private string GetFireExtinguisherField(string fieldName)
         {
             Console.WriteLine();
+            Console.ForegroundColor = ConsoleColor.Cyan;
             Console.WriteLine("Does Droid have a {0}? (T/F)", fieldName);
+            Console.ForegroundColor = ConsoleColor.Gray;
             string input = null;
             bool value = false;
             bool valid = false;
@@ -559,7 +587,9 @@ namespace cis237_assignment3
         private string GetNumOfShipsField(string fieldName)
         {
             Console.WriteLine();
+            Console.ForegroundColor = ConsoleColor.Cyan;
             Console.WriteLine("{0} for the Droid", fieldName);
+            Console.ForegroundColor = ConsoleColor.Gray;
             decimal value = 0;
             bool valid = false;
             while (!valid)

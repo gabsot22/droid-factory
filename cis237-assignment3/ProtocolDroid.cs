@@ -25,7 +25,7 @@ namespace cis237_assignment3
         {
             get
             {
-                return baseCost + (numberLanguages * costPerLanguage);
+                return CalculateBaseCost() + (numberLanguages * costPerLanguage);
             }
         }
 
@@ -44,7 +44,7 @@ namespace cis237_assignment3
 
         public string GetTotalCostDetails()
         {
-            return baseCost + " + (" + numberLanguages + " * " + costPerLanguage + ") =" + TotalCost.ToString("C");
+            return CalculateBaseCost() + " + (" + numberLanguages + " * " + costPerLanguage + ") =" + TotalCost.ToString("C");
         }
 
         // Added this so that we override the abstract method in the parent.

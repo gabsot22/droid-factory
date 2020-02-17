@@ -30,8 +30,12 @@ namespace cis237_assignment3
         // Must be protected so that they are available in the child / derived classes.
         protected string name;
         protected string type;
-        
+        protected decimal typeCost;
+
+
         protected string material;
+        protected decimal materialCost;
+
         protected string color;
         protected decimal baseCost;
         protected decimal totalCost;
@@ -59,8 +63,35 @@ namespace cis237_assignment3
         //***************************
         protected decimal CalculateBaseCost()
         {
-
-            return decimal.Parse(type + material);
+            if (material == "Iron")
+            {
+                materialCost = 5;
+            }
+            if (material == "Gold")
+            {
+                materialCost = 10;
+            }
+            if(material == "Amethyst")
+            {
+                materialCost = 15;
+            }
+            if (type == "Protocol")
+            {
+                typeCost = 25;
+            }
+            if (type == "Astromech")
+            {
+                typeCost = 50;
+            }
+            if (type == "Utility")
+            {
+                typeCost = 15;
+            }
+            if (type == "Janitor")
+            {
+                typeCost = 5;
+            }
+            return decimal.Parse(type + materialCost);
         }
 
         //***************************
@@ -79,7 +110,7 @@ namespace cis237_assignment3
             // 2. Any intstance must therefor override the Salary property and provide
             // an implementation for it.
             // Because of this, this method will always work.
-            return name + " " + type + " " + material + " " + color + " " + CalculateBaseCost().ToString("C") + " " + TotalCost.ToString("C");
+            return name + " " + type + " " + material + " " + color + " "  + CalculateBaseCost().ToString("C") + " " + TotalCost.ToString("C");
         }
 
         // Made this method virtual so that child classes could provide a different

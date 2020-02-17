@@ -47,8 +47,6 @@ namespace cis237_assignment3
                         // Calls the UI for new Droid info and sets it to an array string
                         if (type == "Protocol")
                         {
-                            Console.WriteLine();
-                            Console.WriteLine("You selected Protocol");
                             string[] newDroidInformation = ui.GetNewProtocolDroidInformation();
                             droidCollection.AddNewProtocolDroid(newDroidInformation[0],
                                                                 newDroidInformation[1], 
@@ -58,8 +56,6 @@ namespace cis237_assignment3
                         }
                         if (type == "Utility")
                         {
-                            Console.WriteLine();
-                            Console.WriteLine("You selected Utility");
                             string[] newDroidInformation = ui.GetNewUtilityDroidInformation();
                             droidCollection.AddNewUtilityDroid(newDroidInformation[0], 
                                                                newDroidInformation[1], 
@@ -71,8 +67,6 @@ namespace cis237_assignment3
                         }
                         if (type == "Janitor")
                         {
-                            Console.WriteLine();
-                            Console.WriteLine("You selected Janitor");
                             string[] newDroidInformation = ui.GetNewJanitorDroidInformation();
                             droidCollection.AddNewJanitorDroid(newDroidInformation[0],
                                                                newDroidInformation[1],
@@ -86,8 +80,6 @@ namespace cis237_assignment3
                         }
                         if (type == "Astromech")
                         {
-                            Console.WriteLine();
-                            Console.WriteLine("You selected Astromech");
                             string[] newDroidInformation = ui.GetNewAstromechDroidInformation();
                             droidCollection.AddNewAstromechDroid(newDroidInformation[0],
                                                                newDroidInformation[1],

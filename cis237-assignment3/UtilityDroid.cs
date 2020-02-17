@@ -24,7 +24,7 @@ namespace cis237_assignment3
         {
             get
             {
-                return baseCost + TOOL_BOX_CONST + COMPUTER_CONNECTION_CONST + ARM_CONST;
+                return CalculateBaseCost() + TOOL_BOX_CONST + COMPUTER_CONNECTION_CONST + ARM_CONST;
             }
         }
 
@@ -43,7 +43,7 @@ namespace cis237_assignment3
 
         public string GetTotalCostDetails()
         {
-            return baseCost + " + ToolBox:" + toolbox + " + " + computerConnection +  " + Arm:" + arm + " = " + TotalCost.ToString("C");
+            return CalculateBaseCost() + " + ToolBox:" + toolbox + " + " + computerConnection +  " + Arm:" + arm + " = " + TotalCost.ToString("C");
         }
 
         // Added this so that we override the abstract method in the parent.
