@@ -91,7 +91,8 @@ namespace cis237_assignment3
             {
                 typeCost = 5;
             }
-            return decimal.Parse(type + materialCost);
+            baseCost = typeCost + materialCost;
+            return typeCost + materialCost; //decimal.Parse(typeCost + materialCost)
         }
 
         //***************************
@@ -99,7 +100,7 @@ namespace cis237_assignment3
         //***************************
         public override string ToString()
         {
-            return name + " " + type + " " + material + " " + color;
+            return name + " " + type + " " + material + " " + color + " " + CalculateBaseCost().ToString("C");
         }
 
         public string GetFullScreenOutput()

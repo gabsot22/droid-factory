@@ -23,6 +23,7 @@ namespace cis237_assignment3
         // Add a new Protocol Droid to the collection
         public void AddNewProtocolDroid(string name, string type, string material, string color, int numOfLanguages)
         {
+
             droids[droidLength] = new ProtocolDroid(name, type, material, color, 1);
             droidLength++;
         }

@@ -37,6 +37,7 @@ namespace cis237_assignment3
             int choice = ui.DisplayMenuAndGetResponse();
 
             // While the choice selected is not 2, continue to do work
+
             while (choice != 3)
             {
                 switch (choice)
@@ -90,6 +91,7 @@ namespace cis237_assignment3
                                                                bool.Parse(newDroidInformation[6]),
                                                                bool.Parse(newDroidInformation[7]),
                                                                int.Parse(newDroidInformation[8]));
+                            
                         }
 
                         ui.DisplayAddDroidItemSuccess();
@@ -109,18 +111,22 @@ namespace cis237_assignment3
 
                     // Print Droid List
                     case 2:
+                        ui.DisplayDroidHeader();
                         string outputString = "";
 
                         foreach (Droid droid in droids)
                         {
                             if (droid != null)
                             {
+                             
                                 //Concat to the outputString
-                                outputString += droid.GetFullScreenOutput() +
+                                outputString += droid.ToString() +
                                     Environment.NewLine;
                             }
                         }
+                        ui.Output(outputString);
 
+                        outputString = "";
 
                         //string allDroidsString = droidCollection.ToString();
                         //if (!String.IsNullOrWhiteSpace(allDroidsString))

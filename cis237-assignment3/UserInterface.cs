@@ -144,16 +144,15 @@ namespace cis237_assignment3
         
 
         // Display All Items
-        public void DisplayAllItems(string allItemsOutput)
+        public void DisplayDroidHeader()
         {
             Console.WriteLine();
             Console.ForegroundColor = ConsoleColor.Green;
-            Console.WriteLine("Printing List");
+            Console.WriteLine("Printing Droids");
             Console.WriteLine();
             Console.ForegroundColor = ConsoleColor.Yellow;
-            Console.WriteLine(this.GetDroidHeader());
+            //Console.WriteLine(this.GetDroidHeader());
             Console.ForegroundColor = ConsoleColor.Gray;
-            Console.WriteLine(allItemsOutput);
         }
 
         // Display All Items Error
@@ -172,6 +171,11 @@ namespace cis237_assignment3
             Console.ForegroundColor = ConsoleColor.Green;
             Console.WriteLine("The Droid was successfully added");
             Console.ForegroundColor = ConsoleColor.Gray;
+        }
+
+        public void Output(string outputString)
+        {
+            Console.WriteLine(outputString);
         }
 
         // Display Droid Already Exists Error
@@ -409,10 +413,10 @@ namespace cis237_assignment3
             while (!valid)
             {
                 input = Console.ReadLine();
-                if (input.ToLower() == "y" || input.ToLower() == "n")
+                if (input.ToLower() == "t" || input.ToLower() == "f")
                 {
                     valid = true;
-                    value = (input.ToLower() == "y");
+                    value = (input.ToLower() == "t");
                 }
                 else
                 {
@@ -440,10 +444,10 @@ namespace cis237_assignment3
             while (!valid)
             {
                 input = Console.ReadLine();
-                if (input.ToLower() == "y" || input.ToLower() == "n")
+                if (input.ToLower() == "t" || input.ToLower() == "f")
                 {
                     valid = true;
-                    value = (input.ToLower() == "y");
+                    value = (input.ToLower() == "t");
                 }
                 else
                 {
@@ -471,7 +475,7 @@ namespace cis237_assignment3
             while (!valid)
             {
                 input = Console.ReadLine();
-                if (input.ToLower() == "y" || input.ToLower() == "n")
+                if (input.ToLower() == "t" || input.ToLower() == "f")
                 {
                     valid = true;
                     value = (input.ToLower() == "y");
@@ -502,7 +506,7 @@ namespace cis237_assignment3
             while (!valid)
             {
                 input = Console.ReadLine();
-                if (input.ToLower() == "y" || input.ToLower() == "n")
+                if (input.ToLower() == "t" || input.ToLower() == "f")
                 {
                     valid = true;
                     value = (input.ToLower() == "y");
@@ -533,10 +537,10 @@ namespace cis237_assignment3
             while (!valid)
             {
                 input = Console.ReadLine();
-                if (input.ToLower() == "y" || input.ToLower() == "n")
+                if (input.ToLower() == "t" || input.ToLower() == "f")
                 {
                     valid = true;
-                    value = (input.ToLower() == "y");
+                    value = (input.ToLower() == "t");
                 }
                 else
                 {
@@ -565,10 +569,10 @@ namespace cis237_assignment3
             while (!valid)
             {
                 input = Console.ReadLine();
-                if (input.ToLower() == "y" || input.ToLower() == "n")
+                if (input.ToLower() == "t" || input.ToLower() == "f")
                 {
                     valid = true;
-                    value = (input.ToLower() == "y");
+                    value = (input.ToLower() == "t");
                 }
                 else
                 {
@@ -620,7 +624,7 @@ namespace cis237_assignment3
         {
             return String.Format("{0,-6} {1,-55} {2,-15} {3,6}", "Name", "Type", "Material", "Color") +
                 Environment.NewLine +
-                String.Format("{0,-6} {1,-55} {2,-15} {3,6}", new String('-', 6), new String('-', 40), new String('-', 15), new String('-', 6));
+                String.Format("{0,-6} {1,-55} {2,-15} {3,6}", new String('-', 6), new String('-', 14), new String('-', 15), new String('-', 6));
         }
     }
 }

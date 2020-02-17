@@ -10,9 +10,9 @@ namespace cis237_assignment3
 
         // Property to get the total cost of a droid
         decimal TotalCost { get; }
-        string NameTypeMaterialColor();
+        //string NameTypeMaterialColor();
 
-        string GetFullScreenOutput();
+        //string GetFullScreenOutput();
 
 
     }

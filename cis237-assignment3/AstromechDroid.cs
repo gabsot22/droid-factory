@@ -24,7 +24,7 @@ namespace cis237_assignment3
         {
             get
             {
-                return CalculateBaseCost() + TOOL_BOX_CONST + COMPUTER_CONNECTION_CONST + ARM_CONST + FIRE_EXTINGUISHER_CONST + NUMBER_OF_SHIPS_CONST;
+                return baseCost + TOOL_BOX_CONST + COMPUTER_CONNECTION_CONST + ARM_CONST + FIRE_EXTINGUISHER_CONST + NUMBER_OF_SHIPS_CONST;
             }
         }
 
