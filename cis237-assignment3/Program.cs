@@ -16,7 +16,7 @@ namespace cis237_assignment3
             // Make a new instance of the User Interface class
             UserInterface ui = new UserInterface();
 
-            //Let's make an array to hold a bunch of instances of the Employee class
+            //Let's make an array to hold a bunch of instances of the Droid class
             Droid[] droids = new Droid[100];
 
             // Create an instance of the DroidCollection class
@@ -27,8 +27,6 @@ namespace cis237_assignment3
             droids[1] = new UtilityDroid("BD1", "Utility", "Amethyst", "Red", true, true, true);
             droids[2] = new AstromechDroid("R2D2", "Astromech", "Iron", "Blue", true, true, true, true, 1);
             droids[3] = new JanitorDroid("A1Z4", "Janitor", "Iron", "Black", true, true, true, true, true);
-
-
 
 
             // Display the Welcome Message to the user
@@ -48,7 +46,7 @@ namespace cis237_assignment3
                     case 1:
                         string type = ui.GetDroidTypeInformation();
                         // Calls the UI for new Droid info and sets it to an array string
-                        if (type == "Protocol")
+                        if (type == "Protocol" || type == "protocol")
                         {
                             string[] newDroidInformation = ui.GetNewProtocolDroidInformation();
                             droidCollection.AddNewProtocolDroid(newDroidInformation[0],
@@ -56,8 +54,9 @@ namespace cis237_assignment3
                                                                 newDroidInformation[2],
                                                                 newDroidInformation[3],
                                                                 int.Parse(newDroidInformation[4]));
+                            ui.DisplayAddDroidItemSuccess();
                         }
-                        if (type == "Utility")
+                        if (type == "Utility" || type == "utility")
                         {
                             string[] newDroidInformation = ui.GetNewUtilityDroidInformation();
                             droidCollection.AddNewUtilityDroid(newDroidInformation[0],
@@ -67,8 +66,9 @@ namespace cis237_assignment3
                                                                bool.Parse(newDroidInformation[4]),
                                                                bool.Parse(newDroidInformation[5]),
                                                                bool.Parse(newDroidInformation[6]));
+                            ui.DisplayAddDroidItemSuccess();
                         }
-                        if (type == "Janitor")
+                        if (type == "Janitor" || type == "janitor")
                         {
                             string[] newDroidInformation = ui.GetNewJanitorDroidInformation();
                             droidCollection.AddNewJanitorDroid(newDroidInformation[0],
@@ -80,8 +80,9 @@ namespace cis237_assignment3
                                                                bool.Parse(newDroidInformation[6]),
                                                                bool.Parse(newDroidInformation[7]),
                                                                bool.Parse(newDroidInformation[8]));
+                            ui.DisplayAddDroidItemSuccess();
                         }
-                        if (type == "Astromech")
+                        if (type == "Astromech" || type == "astromech")
                         {
                             string[] newDroidInformation = ui.GetNewAstromechDroidInformation();
                             droidCollection.AddNewAstromechDroid(newDroidInformation[0],
@@ -93,11 +94,9 @@ namespace cis237_assignment3
                                                                bool.Parse(newDroidInformation[6]),
                                                                bool.Parse(newDroidInformation[7]),
                                                                int.Parse(newDroidInformation[8]));
+                            ui.DisplayAddDroidItemSuccess();
 
-                        }
-
-                        ui.DisplayAddDroidItemSuccess();
-
+                        }       
                         break;
 
                     // Print Droid List
@@ -114,22 +113,13 @@ namespace cis237_assignment3
                                 outputString += droid.ToString() +
                                     Environment.NewLine;
                             }
+                            
                         }
                         ui.Output(outputString);
 
                         outputString = "";
 
-                        //string allDroidsString = droidCollection.ToString();
-                        //if (!String.IsNullOrWhiteSpace(allDroidsString))
-                        //{
-                        //    // Display all of the items
-                        //    ui.DisplayAllItems(allDroidsString);
-                        //}
-                        //else
-                        //{
-                        //    // Display error message for all items
-                        //    ui.DisplayAllItemsError();
-                        //}
+                        
                         break;
                 }
 

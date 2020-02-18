@@ -53,7 +53,7 @@ namespace cis237_assignment3
             }
         }
 
-        // Forces child classes to make a Salary Property.
+        // Forces child classes to make a TotalCost Property.
         public virtual decimal TotalCost
         {
             get { return totalCost; }
@@ -67,31 +67,31 @@ namespace cis237_assignment3
         //***************************
         protected decimal CalculateBaseCost()
         {
-            if (material == "Iron")
+            if (material == "Iron" || material == "iron")
             {
                 materialCost = 5;
             }
-            if (material == "Gold")
+            if (material == "Gold" || material == "gold")
             {
                 materialCost = 10;
             }
-            if(material == "Amethyst")
+            if(material == "Amethyst" || material == "amethyst")
             {
                 materialCost = 15;
             }
-            if (type == "Protocol")
+            if (type == "Protocol" || type == "protocol")
             {
                 typeCost = 25;
             }
-            if (type == "Astromech")
+            if (type == "Astromech" || type == "astromech")
             {
                 typeCost = 50;
             }
-            if (type == "Utility")
+            if (type == "Utility" || type == "utility")
             {
                 typeCost = 15;
             }
-            if (type == "Janitor")
+            if (type == "Janitor" || type == "janitor")
             {
                 typeCost = 5;
             }
@@ -107,24 +107,6 @@ namespace cis237_assignment3
             return name + " " + type + " " + material + " " + color + " " + CalculateBaseCost().ToString("C");
         }
 
-        //public string GetFullScreenOutput()
-        //{
-        //    // Even though this class does not have a backing field for the Salary it does
-        //    // have the property declared abstract. This means the following:
-        //    // 1. This class must be abstract and can not make instances of it.
-        //    // 2. Any intstance must therefor override the Salary property and provide
-        //    // an implementation for it.
-        //    // Because of this, this method will always work.
-        //    return name + " " + type + " " + material + " " + color + " "  + CalculateBaseCost().ToString("C") + " " + TotalCost.ToString("C");
-        //}
-
-        // Made this method virtual so that child classes could provide a different
-        // implementation if they would like to. If not, when a call is made to this method
-        // it will work up the chain until it finds one with this method.
-        //public virtual string NameTypeMaterialColor()
-        //{
-        //    return name + " " + type + " " + material + " " + color;
-        //}
 
         // An Abstract method. This means that it MUST be overridden
         // by child classes. It also can not have a method body and

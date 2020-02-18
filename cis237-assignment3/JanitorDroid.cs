@@ -32,9 +32,10 @@ namespace cis237_assignment3
         //******************************
         public override string ToString()
         {
+            GetTotalCostDetails().ToString();
             // Ask the parent to do the first and last name part by
             // calling ToString on the parent/base class
-            return base.ToString() + " " + TotalCost.ToString("C");
+            return base.ToString();
             // Does not have to be the same method. Could be a different one.
             // This would work too.
             // return base.FirstAndLastName() + " " + Salary.ToString("C");

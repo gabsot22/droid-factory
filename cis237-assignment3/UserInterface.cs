@@ -60,14 +60,33 @@ namespace cis237_assignment3
         {
             Console.WriteLine();
             Console.WriteLine("Enter Droid Type:");
-            Console.WriteLine("Protocol -- Utility -- Janitor -- Astromech");         
-            string type = Console.ReadLine();
+            Console.WriteLine("Janitor ($5) -- Utility ($15) -- Protocol ($25) -- Astromech ($50)");
 
-            Console.WriteLine();
-            Console.ForegroundColor = ConsoleColor.Cyan;
-            Console.WriteLine("You selected {0}", type);
-            Console.ForegroundColor = ConsoleColor.Gray;
-            return type;
+            string value = null;
+            bool valid = false;
+            while (!valid)
+            {
+                value = Console.ReadLine();
+                if (!String.IsNullOrWhiteSpace(value) &&
+                    value == "Protocol" || value == "protocol" ||
+                    value == "Utility" || value == "utility" ||
+                    value == "Janitor" || value == "janitor" ||
+                    value == "Astromech" || value == "astromech")
+                {
+                    valid = true;
+                }
+                else
+                {
+                    Console.ForegroundColor = ConsoleColor.Red;
+                    Console.WriteLine("You must provide a valid Droid Type .");
+                    Console.ForegroundColor = ConsoleColor.Gray;
+                    Console.WriteLine();
+                    Console.WriteLine("Enter Droid Type:");
+                    Console.WriteLine("Janitor ($5) -- Utility ($15) -- Protocol ($25) -- Astromech ($50)");
+                    Console.Write("> ");
+                }
+            }
+            return value;
         }
 
         // Get New Protocol Droid Information From The User.
@@ -284,14 +303,18 @@ namespace cis237_assignment3
             while (!valid)
             {
                 value = Console.ReadLine();
-                if (!String.IsNullOrWhiteSpace(value))
+                if (!String.IsNullOrWhiteSpace(value) &&
+                    value == "Protocol" || value == "protocol" ||
+                    value == "Utility" || value == "utility" ||
+                    value == "Janitor" || value == "janitor" ||
+                    value == "Astromech" || value == "astromech")
                 { 
                     valid = true;
                 }
                 else
                 {
                     Console.ForegroundColor = ConsoleColor.Red;
-                    Console.WriteLine("You must provide a value.");
+                    Console.WriteLine("You must provide a valid Droid Type .");
                     Console.ForegroundColor = ConsoleColor.Gray;
                     Console.WriteLine();
                     Console.WriteLine("Confirm Droid's {0}", fieldName);
@@ -315,7 +338,10 @@ namespace cis237_assignment3
             while (!valid)
             {
                 value = Console.ReadLine();
-                if (!String.IsNullOrWhiteSpace(value))
+                if (!String.IsNullOrWhiteSpace(value) &&
+                    value == "Iron" || value == "iron" ||
+                    value == "Gold" || value == "gold" ||
+                    value == "Amethyst" || value == "amethyst")
                 {
                     
                     valid = true;
