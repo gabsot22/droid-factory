@@ -19,13 +19,13 @@ namespace cis237_assignment3
         //*****************************
         //Properties
         //*****************************
-        public override decimal TotalCost
-        {
-            get
-            {
-                return baseCost + TOOL_BOX_CONST + COMPUTER_CONNECTION_CONST + ARM_CONST + TRASH_COMPACTOR_CONST + VACUUM_CONST;
-            }
-        }
+        //public override decimal TotalCost
+        //{
+        //    get
+        //    {
+        //        return baseCost + TOOL_BOX_CONST + COMPUTER_CONNECTION_CONST + ARM_CONST + TRASH_COMPACTOR_CONST + VACUUM_CONST;
+        //    }
+        //}
 
         //******************************
         //Public Methods
@@ -53,9 +53,9 @@ namespace cis237_assignment3
 
         // Added this so that we override the abstract method in the parent.
         // We were required to do so because the method was abstract.
-        public override decimal CalculateTotalCost()
+        public override void CalculateTotalCost()
         {
-            return TotalCost;
+            totalCost = CalculateBaseCost() + TOOL_BOX_CONST + COMPUTER_CONNECTION_CONST + ARM_CONST + TRASH_COMPACTOR_CONST + VACUUM_CONST;
         }
 
         //*****************************

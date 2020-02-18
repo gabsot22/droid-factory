@@ -54,7 +54,11 @@ namespace cis237_assignment3
         }
 
         // Forces child classes to make a Salary Property.
-        public abstract decimal TotalCost { get; }
+        public virtual decimal TotalCost
+        {
+            get { return totalCost; }
+            set { totalCost = value; }
+        }
 
         // LOOK AT THE PRICE ABSTRACT DECMAL AND COMPARE!!!!!!!!!!!!!!!!!
 
@@ -103,29 +107,33 @@ namespace cis237_assignment3
             return name + " " + type + " " + material + " " + color + " " + CalculateBaseCost().ToString("C");
         }
 
-        public string GetFullScreenOutput()
-        {
-            // Even though this class does not have a backing field for the Salary it does
-            // have the property declared abstract. This means the following:
-            // 1. This class must be abstract and can not make instances of it.
-            // 2. Any intstance must therefor override the Salary property and provide
-            // an implementation for it.
-            // Because of this, this method will always work.
-            return name + " " + type + " " + material + " " + color + " "  + CalculateBaseCost().ToString("C") + " " + TotalCost.ToString("C");
-        }
+        //public string GetFullScreenOutput()
+        //{
+        //    // Even though this class does not have a backing field for the Salary it does
+        //    // have the property declared abstract. This means the following:
+        //    // 1. This class must be abstract and can not make instances of it.
+        //    // 2. Any intstance must therefor override the Salary property and provide
+        //    // an implementation for it.
+        //    // Because of this, this method will always work.
+        //    return name + " " + type + " " + material + " " + color + " "  + CalculateBaseCost().ToString("C") + " " + TotalCost.ToString("C");
+        //}
 
         // Made this method virtual so that child classes could provide a different
         // implementation if they would like to. If not, when a call is made to this method
         // it will work up the chain until it finds one with this method.
-        public virtual string NameTypeMaterialColor()
-        {
-            return name + " " + type + " " + material + " " + color;
-        }
+        //public virtual string NameTypeMaterialColor()
+        //{
+        //    return name + " " + type + " " + material + " " + color;
+        //}
 
         // An Abstract method. This means that it MUST be overridden
         // by child classes. It also can not have a method body and
         // can only be declared in a abstract class.
-        public abstract decimal CalculateTotalCost();
+        public virtual void CalculateTotalCost()
+        {
+            totalCost = CalculateBaseCost();
+        }
+
 
 
 

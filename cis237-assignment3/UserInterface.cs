@@ -178,14 +178,6 @@ namespace cis237_assignment3
             Console.WriteLine(outputString);
         }
 
-        // Display Droid Already Exists Error
-        //public void DisplayDroidAlreadyExistsError()
-        //{
-        //    Console.WriteLine();
-        //    Console.ForegroundColor = ConsoleColor.Red;
-        //    Console.WriteLine("A Droid With That Name Already Exists");
-        //    Console.ForegroundColor = ConsoleColor.Gray;
-        //}
 
         //**********************
         // PRIVATE METHODS
@@ -286,7 +278,7 @@ namespace cis237_assignment3
             Console.ForegroundColor = ConsoleColor.Cyan;
             Console.WriteLine("Confirm Droid's {0}", fieldName);
             Console.ForegroundColor = ConsoleColor.Gray;
-            Console.WriteLine("Protocol -- Utility -- Janitor -- Astromech");
+            Console.WriteLine("Janitor ($5) -- Utility ($15) -- Protocol ($25) -- Astromech ($50)");
             string value = null;
             bool valid = false;
             while (!valid)
@@ -303,7 +295,7 @@ namespace cis237_assignment3
                     Console.ForegroundColor = ConsoleColor.Gray;
                     Console.WriteLine();
                     Console.WriteLine("Confirm Droid's {0}", fieldName);
-                    Console.WriteLine("Protocol -- Utility -- Janitor -- Astromech");
+                    Console.WriteLine("Janitor ($5) -- Utility ($15) -- Protocol ($25) -- Astromech ($50)");
                     Console.Write("> ");
                 }
             }
@@ -317,7 +309,7 @@ namespace cis237_assignment3
             Console.ForegroundColor = ConsoleColor.Cyan;
             Console.WriteLine("What is the new Droids's {0}", fieldName);
             Console.ForegroundColor = ConsoleColor.Gray;
-            Console.WriteLine("Iron -- Gold -- Amethyst");
+            Console.WriteLine("Iron ($5) -- Gold ($10) -- Amethyst ($15)");
             string value = null;
             bool valid = false;
             while (!valid)
@@ -335,7 +327,7 @@ namespace cis237_assignment3
                     Console.ForegroundColor = ConsoleColor.Gray;
                     Console.WriteLine();
                     Console.WriteLine("What is the new Droids's {0}", fieldName);
-                    Console.WriteLine("Iron -- Gold -- Amethyst");
+                    Console.WriteLine("Iron ($5) -- Gold ($10) -- Amethyst ($15)");
                     Console.Write("> ");
                 }
             }
@@ -376,7 +368,7 @@ namespace cis237_assignment3
         {
             Console.WriteLine();
             Console.ForegroundColor = ConsoleColor.Cyan;
-            Console.WriteLine("What is the new Droid's {0}", fieldName);
+            Console.WriteLine("How many languages does the Droid {0}", fieldName);
             Console.ForegroundColor = ConsoleColor.Gray;
             decimal value = 0;
             bool valid = false;

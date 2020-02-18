@@ -6,10 +6,10 @@ namespace cis237_assignment3
     {
 
         // Method to calculate the total cost of a droid
-        decimal CalculateTotalCost();
+        void CalculateTotalCost();
 
         // Property to get the total cost of a droid
-        decimal TotalCost { get; }
+        decimal TotalCost { get; set; }
         //string NameTypeMaterialColor();
 
         //string GetFullScreenOutput();

@@ -24,6 +24,7 @@ namespace cis237_assignment3
         public void AddNewProtocolDroid(string name, string type, string material, string color, int numOfLanguages)
         {
 
+           // droids[droidLength] = new ProtocolDroid(name, type, material, color, 1);
             droids[droidLength] = new ProtocolDroid(name, type, material, color, 1);
             droidLength++;
         }

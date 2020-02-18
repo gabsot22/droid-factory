@@ -21,13 +21,17 @@ namespace cis237_assignment3
         //*****************************
         //Properties
         //*****************************
-        public override decimal TotalCost
-        {
-            get
-            {
-                return CalculateBaseCost() + (numberLanguages * costPerLanguage);
-            }
-        }
+        //public override decimal TotalCost
+        //{
+        //    get
+        //    {
+        //        return totalCost;
+        //    }
+        //    set
+        //    {
+        //        totalCost = value;
+        //    }
+        //}
 
         //******************************
         //Public Methods
@@ -49,9 +53,9 @@ namespace cis237_assignment3
 
         // Added this so that we override the abstract method in the parent.
         // We were required to do so because the method was abstract.
-        public override decimal CalculateTotalCost()
+        public override void CalculateTotalCost()
         {
-            return TotalCost;
+            totalCost = CalculateBaseCost() + (numberLanguages * costPerLanguage); 
         }
 
         //*****************************
