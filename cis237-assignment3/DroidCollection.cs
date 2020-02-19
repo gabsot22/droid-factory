@@ -58,7 +58,6 @@ namespace cis237_assignment3
             // Declare a return string
             string returnString = "";
 
-
             // Loop through all of the droids
             foreach (Droid droid in droids)
             {

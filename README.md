@@ -3,7 +3,7 @@
 ## Due: 02-19-2020
 
 ## Author
-
+Gabriel Soto
 
 
 ## Description
@@ -130,7 +130,8 @@ It may be beneficial for you to create extra methods within the droid sub classe
 | **Total**                  | **100**|
 
 ## Outside Resources Used
-
+Previous assignments and the inclass book
 
 
 ## Known Problems, Issues, And/Or Errors in the Program
+When outputting the droids, couldn't figure out how to pad them to the left. I tried {0,-6} and so on.
