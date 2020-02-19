@@ -34,6 +34,8 @@ namespace cis237_assignment3
         public override string ToString()
         {
             CalculateTotalCost();
+
+            GetTotalCostDetails();
             // Ask the parent to do the first and last name part by
             // calling ToString on the parent/base class
             return base.ToString() + " " + totalCost.ToString("C");

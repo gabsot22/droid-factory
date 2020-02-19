@@ -59,7 +59,9 @@ namespace cis237_assignment3
         public string GetDroidTypeInformation()
         {
             Console.WriteLine();
+            Console.ForegroundColor = ConsoleColor.Cyan;
             Console.WriteLine("Enter Droid Type:");
+            Console.ForegroundColor = ConsoleColor.Gray;
             Console.WriteLine("Janitor ($5) -- Utility ($15) -- Protocol ($25) -- Astromech ($50)");
 
             string value = null;
@@ -165,21 +167,12 @@ namespace cis237_assignment3
         // Display All Items
         public void DisplayDroidHeader()
         {
-            Console.WriteLine();
-            Console.ForegroundColor = ConsoleColor.Green;
-            Console.WriteLine("Printing Droids");
+            //Console.WriteLine();
+            //Console.ForegroundColor = ConsoleColor.Green;
+            //Console.WriteLine("Printing Droids");
             Console.WriteLine();
             Console.ForegroundColor = ConsoleColor.Yellow;
-            //Console.WriteLine(this.GetDroidHeader());
-            Console.ForegroundColor = ConsoleColor.Gray;
-        }
-
-        // Display All Items Error
-        public void DisplayAllItemsError()
-        {
-            Console.WriteLine();
-            Console.ForegroundColor = ConsoleColor.Red;
-            Console.WriteLine("There are no droids in the list to print");
+            Console.WriteLine(this.GetDroidHeader());
             Console.ForegroundColor = ConsoleColor.Gray;
         }
 
@@ -192,9 +185,36 @@ namespace cis237_assignment3
             Console.ForegroundColor = ConsoleColor.Gray;
         }
 
+        // Output for the option 2 
         public void Output(string outputString)
         {
             Console.WriteLine(outputString);
+        }
+
+        public void NewDroidsOutputHeading()
+        {
+            Console.WriteLine();
+            Console.ForegroundColor = ConsoleColor.Yellow;
+            Console.WriteLine("New Droids:");
+            Console.ForegroundColor = ConsoleColor.Gray;
+        }
+
+        public void PreLoadedDroidsOutputHeading()
+        {
+            Console.WriteLine();
+            Console.ForegroundColor = ConsoleColor.Yellow;
+            Console.WriteLine("Pre-loaded Droids:");
+            Console.ForegroundColor = ConsoleColor.Gray;
+        }
+
+        public void DisplayErrorNoNewDroids()
+        {
+            Console.WriteLine();
+            Console.ForegroundColor = ConsoleColor.Red;
+            Console.WriteLine("ALERT");
+            Console.ForegroundColor = ConsoleColor.Gray;
+            Console.WriteLine("Haven't added any new Droids");
+            Console.WriteLine();
         }
 
 
@@ -640,9 +660,14 @@ namespace cis237_assignment3
         // Get a string formatted as a header for items
         private string GetDroidHeader()
         {
-            return String.Format("{0,-6} {1,-55} {2,-15} {3,6}", "Name", "Type", "Material", "Color") +
+            return String.Format("{0,-10} {1,-9} {2,-8} {3,-6} {4, -6} {5, -6}", "Name", "Type", "Material", "Color", "Base Cost", "Total Cost") +
                 Environment.NewLine +
-                String.Format("{0,-6} {1,-55} {2,-15} {3,6}", new String('-', 6), new String('-', 14), new String('-', 15), new String('-', 6));
+                String.Format("{0,-10} {1,-9} {2,-8} {3,-6} {4, -6} {5, -6}", new String('-', 10),
+                                                                              new String('-', 9),
+                                                                              new String('-', 8),
+                                                                              new String('-', 6),
+                                                                              new String('-', 9),
+                                                                              new String('-', 10));
         }
     }
 }

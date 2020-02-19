@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace cis237_assignment3
 {
-    class DroidCollection
+    class DroidCollection : UserInterface
     {
         
         // Private Variables
@@ -67,6 +67,7 @@ namespace cis237_assignment3
                     returnString += droid.ToString() + Environment.NewLine;
                 }
             }
+        
             // Return the return string
             return returnString;
         }

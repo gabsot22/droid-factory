@@ -10,6 +10,9 @@ namespace cis237_assignment3
     {
         static void Main(string[] args)
         {
+            // Boolean to see if it should print the heading for new Droid
+            bool validation = false;
+
             // Set a constant for the size of the droidCollection
             const int droidCollectionSize = 100;
 
@@ -55,6 +58,7 @@ namespace cis237_assignment3
                                                                 newDroidInformation[3],
                                                                 int.Parse(newDroidInformation[4]));
                             ui.DisplayAddDroidItemSuccess();
+                            validation = true;
                         }
                         if (type == "Utility" || type == "utility")
                         {
@@ -67,6 +71,7 @@ namespace cis237_assignment3
                                                                bool.Parse(newDroidInformation[5]),
                                                                bool.Parse(newDroidInformation[6]));
                             ui.DisplayAddDroidItemSuccess();
+                            validation = true;
                         }
                         if (type == "Janitor" || type == "janitor")
                         {
@@ -81,6 +86,7 @@ namespace cis237_assignment3
                                                                bool.Parse(newDroidInformation[7]),
                                                                bool.Parse(newDroidInformation[8]));
                             ui.DisplayAddDroidItemSuccess();
+                            validation = true;
                         }
                         if (type == "Astromech" || type == "astromech")
                         {
@@ -95,34 +101,52 @@ namespace cis237_assignment3
                                                                bool.Parse(newDroidInformation[7]),
                                                                int.Parse(newDroidInformation[8]));
                             ui.DisplayAddDroidItemSuccess();
+                            validation = true;
 
-                        }       
+                        }
                         break;
 
                     // Print Droid List
                     case 2:
+                        // Tests to see if 
+                        if (validation == true)
+                        {
+                            // Output New Droid heading
+                            ui.NewDroidsOutputHeading();
+
+                            // Output Heading
+                            ui.DisplayDroidHeader();
+
+                            // Output New Droids 
+                            ui.Output(droidCollection.ToString());
+                        }
+                        else
+                        {
+                            ui.DisplayErrorNoNewDroids();
+                        }
+
+                        // Output
+                        ui.PreLoadedDroidsOutputHeading();
+
+                        // Output Heading again for pre-loaded Droids
                         ui.DisplayDroidHeader();
+
+                        // Output preloaded Droids
                         string outputString = "";
 
                         foreach (Droid droid in droids)
                         {
                             if (droid != null)
                             {
-
                                 //Concat to the outputString
                                 outputString += droid.ToString() +
                                     Environment.NewLine;
                             }
-                            
                         }
                         ui.Output(outputString);
-
                         outputString = "";
-
-                        
                         break;
                 }
-
                 // Get the new choice of what to do from the user
                 choice = ui.DisplayMenuAndGetResponse();
             }
