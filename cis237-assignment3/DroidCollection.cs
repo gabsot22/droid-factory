@@ -1,4 +1,8 @@
-﻿using System;
+﻿/* Gabe Soto
+ * CIS 237 MW 6:00-8:15pm
+ * 2/19/20
+ * */
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,7 +12,6 @@ namespace cis237_assignment3
 {
     class DroidCollection : UserInterface
     {
-        
         // Private Variables
         private Droid[] droids;
         private int droidLength;
@@ -23,8 +26,6 @@ namespace cis237_assignment3
         // Add a new Protocol Droid to the collection
         public void AddNewProtocolDroid(string name, string type, string material, string color, int numOfLanguages)
         {
-
-           // droids[droidLength] = new ProtocolDroid(name, type, material, color, 1);
             droids[droidLength] = new ProtocolDroid(name, type, material, color, 1);
             droidLength++;
         }
@@ -71,30 +72,5 @@ namespace cis237_assignment3
             // Return the return string
             return returnString;
         }
-
-        // Find an item by Droid's Name
-        public string FindDroidName(string name)
-        {
-            // Declare return string for the possible found item
-            string returnString = null;
-
-            // For each Droid in droids
-            foreach (Droid droid in droids)
-            {
-                // If the beverage is not null
-                if (droid != null)
-                {
-                    // If the droid Name is the same as the search Name{
-                    if (droid.Name == name)
-                    {
-                        // Set the return string to the result of the droid's ToString method
-                        returnString = droid.ToString();
-                    }
-                }
-            }
-            // Return the returnString
-            return returnString;
-        }
-         
     }
 }

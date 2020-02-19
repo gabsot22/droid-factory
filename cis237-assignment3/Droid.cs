@@ -1,4 +1,8 @@
-﻿using System;
+﻿/* Gabe Soto
+ * CIS 237 MW 6:00-8:15pm
+ * 2/19/20
+ * */
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,8 +12,10 @@ namespace cis237_assignment3
 {
     abstract class Droid : IDroid
     {
-
+        //*****************************
         // Constants
+        //*****************************
+
         // Additional Options
         protected const int TOOL_BOX_CONST = 1;
         protected const int COMPUTER_CONNECTION_CONST = 1;
@@ -17,21 +23,17 @@ namespace cis237_assignment3
         protected const int FIRE_EXTINGUISHER_CONST = 1;
         protected const int TRASH_COMPACTOR_CONST = 1;
         protected const int VACUUM_CONST = 1;
-
         protected const int NUMBER_OF_SHIPS_CONST = 3;
         
-
         //*****************************
         // Class level Variables
         //*****************************
-        //private string name;
-
-
+  
         // Must be protected so that they are available in the child / derived classes.
         protected string name;
+
         protected string type;
         protected decimal typeCost;
-
 
         protected string material;
         protected decimal materialCost;
@@ -67,6 +69,7 @@ namespace cis237_assignment3
         //***************************
         protected decimal CalculateBaseCost()
         {
+            // Test input and sets to price
             if (material == "Iron" || material == "iron")
             {
                 materialCost = 5;
@@ -95,8 +98,8 @@ namespace cis237_assignment3
             {
                 typeCost = 5;
             }
-            baseCost = typeCost + materialCost;
-            return typeCost + materialCost; //decimal.Parse(typeCost + materialCost)
+            // Equation for base cost
+            return typeCost + materialCost; 
         }
 
         //***************************
@@ -108,16 +111,11 @@ namespace cis237_assignment3
         }
 
 
-        // An Abstract method. This means that it MUST be overridden
-        // by child classes. It also can not have a method body and
-        // can only be declared in a abstract class.
+        // Virtual method for calculating total cost... will be overriden in child classes
         public virtual void CalculateTotalCost()
         {
             totalCost = CalculateBaseCost();
         }
-
-
-
 
         //***************************************
         // Constructor

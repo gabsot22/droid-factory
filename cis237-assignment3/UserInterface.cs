@@ -1,4 +1,8 @@
-﻿using System;
+﻿/* Gabe Soto
+ * CIS 237 MW 6:00-8:15pm
+ * 2/19/20
+ * */
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,16 +12,16 @@ namespace cis237_assignment3
 {
     class UserInterface
     {
-        
         const int MAX_MENU_CHOICES = 3;
 
         //No Variables
         //No Properties
-        //No Constructors (but we could if we needed to)
+        //No Constructors
 
         //******************************
         // PUBLIC METHODS
         //******************************
+
         // Display Welcome Greeting
         public void DisplayWelcomeGreeting()
         {
@@ -164,16 +168,14 @@ namespace cis237_assignment3
 
         
 
-        // Display All Items
+        // Display Header
         public void DisplayDroidHeader()
         {
-            //Console.WriteLine();
-            //Console.ForegroundColor = ConsoleColor.Green;
-            //Console.WriteLine("Printing Droids");
             Console.WriteLine();
             Console.ForegroundColor = ConsoleColor.Yellow;
             Console.WriteLine(this.GetDroidHeader());
             Console.ForegroundColor = ConsoleColor.Gray;
+            
         }
 
         // Display Add Droid Item Success
@@ -191,6 +193,7 @@ namespace cis237_assignment3
             Console.WriteLine(outputString);
         }
 
+        // Display New Droid Heading
         public void NewDroidsOutputHeading()
         {
             Console.WriteLine();
@@ -199,6 +202,7 @@ namespace cis237_assignment3
             Console.ForegroundColor = ConsoleColor.Gray;
         }
 
+        // Display PreLoaded Droid heading
         public void PreLoadedDroidsOutputHeading()
         {
             Console.WriteLine();
@@ -207,6 +211,7 @@ namespace cis237_assignment3
             Console.ForegroundColor = ConsoleColor.Gray;
         }
 
+        // Display error message for no new droids
         public void DisplayErrorNoNewDroids()
         {
             Console.WriteLine();
@@ -307,8 +312,6 @@ namespace cis237_assignment3
             }
             return value;
         }
-
-
 
         // Get a valid type field from the console
         private string GetTypeField(string fieldName)
@@ -653,9 +656,6 @@ namespace cis237_assignment3
             }
             return value.ToString();
         }
-
-
-
 
         // Get a string formatted as a header for items
         private string GetDroidHeader()

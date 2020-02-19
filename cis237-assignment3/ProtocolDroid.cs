@@ -1,4 +1,8 @@
-﻿using System;
+﻿/* Gabe Soto
+ * CIS 237 MW 6:00-8:15pm
+ * 2/19/20
+ * */
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -18,42 +22,20 @@ namespace cis237_assignment3
         // Constant
         private const int costPerLanguage = 2;
 
-        //*****************************
-        //Properties
-        //*****************************
-        //public override decimal TotalCost
-        //{
-        //    get
-        //    {
-        //        return totalCost;
-        //    }
-        //    set
-        //    {
-        //        totalCost = value;
-        //    }
-        //}
-
         //******************************
         //Public Methods
         //******************************
         public override string ToString()
         {
+            // Calculates total cost
             CalculateTotalCost();
-            // Ask the parent to do the first and last name part by
+
+            // Ask the parent to do the name, type, material, color part by
             // calling ToString on the parent/base class
             return base.ToString() + " " + totalCost.ToString("C");
-            // Does not have to be the same method. Could be a different one.
-            // This would work too.
-            // return base.FirstAndLastName() + " " + Salary.ToString("C");
         }
 
-        public string GetTotalCostDetails()
-        {
-            return CalculateBaseCost() + " + (" + numberLanguages + " * " + costPerLanguage + ") =" + TotalCost.ToString("C");
-        }
-
-        // Added this so that we override the abstract method in the parent.
-        // We were required to do so because the method was abstract.
+        // Added this so that we override the virtual method in the parent.
         public override void CalculateTotalCost()
         {
             totalCost = CalculateBaseCost() + (numberLanguages * costPerLanguage); 
@@ -69,11 +51,11 @@ namespace cis237_assignment3
             string Color,
             int NumberLanguages
         // Call the parent constructor with the base keyword and send it
-        // the first and last name we just collected from the parameters
+        // the name, type, material, and color we just collected from the parameters
         // above this comment.
         ) : base(Name, Type, Material, Color)
         {
-            // No need to set the first and last name variables.
+            // No need to set the name, type, material, color variables.
             // will be handled by the parent/base constructor.
             this.numberLanguages = NumberLanguages;
         }
